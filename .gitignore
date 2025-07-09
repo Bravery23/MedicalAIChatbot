@@ -1,0 +1,22 @@
+# Python virtual environment
+.venv/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Rasa cache
+.rasa/
+.cache/
+.results/
+
+# Database files (nếu có)
+*.db
+*.sqlite3
+
+# IDE config
+.idea/
+
+# macOS
+.DS_Store
