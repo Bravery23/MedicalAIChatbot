@@ -1,91 +1,780 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - Xin chào
+    - Chào bạn
+    - Hi
+    - Chào bác sĩ
+    - Chào buổi sáng
+    - Xin chào, tôi cần tư vấn
+    - Chào anh/chị
+    - Hello
+    - Chào em
+    - Xin chào bác sĩ ạ
+    - Chào buổi chiều
+    - Chào buổi tối
+    - Xin chào, tôi có thể hỏi không?
+    - Chào mọi người
+    - Hi bác sĩ
+    - Xin chào phòng khám
+    - Chào bệnh viện
+    - Chào trung tâm y tế
+    - Xin chào, tôi cần hỗ trợ
+    - Chào nhân viên y tế
+    - Xin chào các bác sĩ
+    - Chào cô/chú
+    - Xin chào, tôi muốn đặt câu hỏi
+    - Chào tất cả mọi người
+    - Hi everyone
+    - Xin chào bác sĩ giỏi
+    - Chào bác sĩ chuyên khoa
+    - Xin chào phòng tư vấn
+    - Chào hotline
+    - Xin chào tổng đài
+    - Chào bác sĩ trực
+    - Xin chào bệnh viện Vinmec
+    - Chào bác sĩ Bệnh viện Bạch Mai
+    - Xin chào phòng khám đa khoa
+    - Chào trung tâm sức khỏe
+    - Xin chào bệnh viện Chợ Rẫy
+    - Chào bác sĩ ở đây
+    - Xin chào, tôi có triệu chứng
+    - Chào bác sĩ nhi khoa
+    - Xin chào bác sĩ sản khoa
+    - Chào bác sĩ tim mạch
+    - Xin chào bác sĩ da liễu
+    - Chào bác sĩ mắt
+    - Xin chào bác sĩ răng hàm mặt
+    - Chào bác sĩ thần kinh
+    - Xin chào bác sĩ phẫu thuật
+    - Chào bác sĩ nội khoa
+    - Xin chào bác sĩ ngoại khoa
+    - Chào bác sĩ tai mũi họng
+    - Xin chào bác sĩ ung bướu
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - Tạm biệt
+    - Cảm ơn, bye
+    - Kết thúc
+    - Hẹn gặp lại
+    - Chào tạm biệt
+    - Thôi tôi cúp máy đây
+    - Xin chào, tôi phải đi rồi
+    - Cảm ơn bạn đã tư vấn
+    - Bye bye
+    - See you later
+    - Tôi phải đi rồi
+    - Cảm ơn và tạm biệt
+    - Chào nhé
+    - Hẹn gặp lại bác sĩ
+    - Cảm ơn phòng khám
+    - Tạm biệt mọi người
+    - Chào tạm biệt bác sĩ
+    - Cảm ơn bệnh viện
+    - Tôi kết thúc cuộc gọi
+    - Chào nhé các bác sĩ
+    - Tạm biệt và cảm ơn
+    - Chào tạm biệt nhé
+    - Cảm ơn lời tư vấn
+    - Tôi tạm biệt đây
+    - Chào và cảm ơn
+    - Hẹn gặp lại lần sau
+    - Cảm ơn thời gian
+    - Tạm biệt bác sĩ giỏi
+    - Chào tạm biệt phòng khám
+    - Cảm ơn bác sĩ chuyên khoa
+    - Tôi phải về rồi
+    - Chào nhé, hẹn gặp lại
+    - Cảm ơn hotline
+    - Tạm biệt tổng đài
+    - Cảm ơn bệnh viện Vinmec
+    - Tạm biệt Bệnh viện Bạch Mai
+    - Chào phòng khám đa khoa
+    - Cảm ơn trung tâm sức khỏe
+    - Tạm biệt bệnh viện Chợ Rẫy
+    - Chào các bác sĩ ở đây
+    - Cảm ơn vì đã giúp đỡ
+    - Tạm biệt bác sĩ nhi khoa
+    - Chào bác sĩ sản khoa
+    - Cảm ơn bác sĩ tim mạch
+    - Tạm biệt bác sĩ da liễu
+    - Cảm ơn bác sĩ răng hàm mặt
+    - Tạm biệt bác sĩ thần kinh
 
-- intent: affirm
+- intent: book_appointment_by_specialty
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Tôi cần đặt lịch khám [mắt](specialty)
+    - Tôi muốn khám [tim mạch](specialty) vào [tuần sau](date)
+    - Đặt lịch khám [răng](specialty) cho tôi
+    - Tôi muốn đặt lịch khám [nhi](specialty)
+    - Đặt lịch khám [da liễu](specialty) giúp tôi
+    - Đặt lịch khám [sản khoa](specialty) vào [chủ nhật](date)
+    - Tôi muốn đặt lịch khám [thần kinh](specialty)
+    - Đặt lịch khám [tai mũi họng](specialty) cho tôi
+    - Tôi cần đặt lịch khám [ung bướu](specialty)
+    - Đặt lịch khám [phẫu thuật](specialty) vào [tháng sau](date)
+    - Tôi muốn đặt lịch khám [nội khoa](specialty)
+    - Đặt lịch khám [ngoại khoa](specialty) giúp tôi
+    - Tôi cần đặt lịch khám [cấp cứu](specialty)
+    - Đặt lịch khám [phục hồi chức năng](specialty)
+    - Tôi muốn đặt lịch khám [dinh dưỡng](specialty)
+    - Đặt lịch khám [tâm lý](specialty) vào [thứ 7](date)
+    - Tôi cần đặt lịch khám [xét nghiệm](specialty)
+    - Đặt lịch khám [chẩn đoán hình ảnh](specialty)
+    - Tôi muốn đặt lịch khám [vaccine](specialty)
+    - Đặt lịch khám [y học cổ truyền](specialty)
+    - Tôi cần đặt lịch khám [thể thao](specialty)
+    - Đặt lịch khám [lão khoa](specialty) vào [ngày mai](date)
+    - Tôi muốn đặt lịch khám [cột sống](specialty)
+    - Đặt lịch khám [khớp](specialty) giúp tôi
+    - Tôi cần đặt lịch khám [hô hấp](specialty)
+    - Đặt lịch khám [tiêu hóa](specialty) vào [tuần tới](date)
+    - Tôi muốn đặt lịch khám [thận](specialty)
+    - Đặt lịch khám [gan](specialty) cho tôi
+    - Tôi cần đặt lịch khám [máu](specialty)
+    - Đặt lịch khám [nội tiết](specialty) vào [tháng 8](date)
+    - Tôi muốn đặt lịch khám [tiểu đường](specialty)
+    - Đặt lịch khám [béo phì](specialty) giúp tôi
+    - Tôi cần đặt lịch khám [dị ứng](specialty)
+    - Đặt lịch khám [miễn dịch](specialty) vào [quý 4](date)
+    - Tôi muốn đặt lịch khám [sinh sản](specialty)
+    - Đặt lịch khám [nam khoa](specialty) cho tôi
+    - Tôi cần đặt lịch khám [phụ khoa](specialty)
+    - Đặt lịch khám [vô sinh](specialty) vào [năm sau](date)
+    - Tôi muốn đặt lịch khám [gia đình](specialty)
+    - Đặt lịch khám [trẻ em](specialty) giúp tôi
+    - Tôi cần đặt lịch khám [người cao tuổi](specialty)
+    - Đặt lịch khám [công ty](specialty) vào [cuối tháng](date)
+    - Tôi muốn đặt lịch khám bệnh
+    - Tôi muốn đặt lịch khám
+    - Làm sao để đặt lịch khám?
+    - Có thể đặt lịch khám [thứ 2](date) được không?
+    - Đặt lịch khám vào [thứ 5](date)
+- intent: book_appointment_by_doctor
+  examples: |
+    - Cho tôi đặt lịch với [bác sĩ Minh](doctor_name)
+    - Tôi cần đặt lịch với [bác sĩ Lan](doctor_name)
+    - Tôi cần đặt lịch với [bác sĩ Hùng](doctor_name)
+    - Tôi muốn hẹn gặp [bác sĩ Minh](doctor_name)
+    - Tôi cần hẹn gặp [bác sĩ Lan](doctor_name)
+    - Tôi muốn đặt lịch khám với [bác sĩ Hùng](doctor_name)
+    - Tôi muốn khám với [bác sĩ Minh](doctor_name)
+- intent: ask_doctor_info
+  examples: |
+    - Bác sĩ nào chuyên về [tim mạch](specialty)?
+    - [Bác sĩ Lan](doctor_name) có làm việc thứ 7 không?
+    - Thông tin về [bác sĩ Hùng](doctor_name)
+    - Bác sĩ này có kinh nghiệm bao nhiêu năm?
+    - [Bác sĩ Minh](doctor_name) khám [thứ mấy](date)?
+    - Bác sĩ [nhi](specialty) nào giỏi nhất?
+    - [Bác sĩ Hà](doctor_name) có bằng cấp gì?
+    - Tôi muốn tìm hiểu về [bác sĩ Tân](doctor_name)
+    - Bác sĩ [da liễu](specialty) nào có kinh nghiệm?
+    - [Bác sĩ Thảo](doctor_name) có chuyên khoa gì?
+    - Bác sĩ [sản khoa](specialty) nào được đánh giá cao?
+    - [Bác sĩ Nam](doctor_name) làm việc từ mấy giờ?
+    - Bác sĩ [thần kinh](specialty) nào có tiếng?
+    - [Bác sĩ Linh](doctor_name) có phí khám bao nhiêu?
+    - Bác sĩ [tai mũi họng](specialty) nào giỏi?
+    - [Bác sĩ Đức](doctor_name) có nhận BHYT không?
+    - Bác sĩ [ung bướu](specialty) nào có uy tín?
+    - [Bác sĩ Mai](doctor_name) tốt nghiệp ở đâu?
+    - Bác sĩ [phẫu thuật](specialty) nào được khuyến nghị?
+    - [Bác sĩ Tuấn](doctor_name) có bao nhiêu năm kinh nghiệm?
+    - Bác sĩ [nội khoa](specialty) nào chuyên nghiệp?
+    - [Bác sĩ Hương](doctor_name) có làm việc tối không?
+    - Bác sĩ [ngoại khoa](specialty) nào thành công?
+    - [Bác sĩ Quân](doctor_name) có chứng chỉ gì?
+    - Bác sĩ [cấp cứu](specialty) nào có mặt 24/7?
+    - [Bác sĩ Phương](doctor_name) có chuyên về gì?
+    - Bác sĩ [phục hồi chức năng](specialty) nào hiệu quả?
+    - [Bác sĩ Dũng](doctor_name) có học bổng nào không?
+    - Bác sĩ [dinh dưỡng](specialty) nào am hiểu?
+    - [Bác sĩ Châu](doctor_name) có công trình nghiên cứu gì?
+    - Bác sĩ [tâm lý](specialty) nào tận tâm?
+    - [Bác sĩ Khánh](doctor_name) có thạc sĩ hay tiến sĩ?
+    - Bác sĩ [xét nghiệm](specialty) nào chính xác?
+    - [Bác sĩ Trinh](doctor_name) có bài báo khoa học không?
+    - Bác sĩ [chẩn đoán hình ảnh](specialty) nào giỏi đọc phim?
+    - [Bác sĩ Hoàng](doctor_name) có thành tích gì đặc biệt?
+    - Bác sĩ [vaccine](specialty) nào có kinh nghiệm tiêm chủng?
+    - [Bác sĩ Vân](doctor_name) có từng du học không?
+    - Bác sĩ [y học cổ truyền](specialty) nào có tiếng?
+    - [Bác sĩ Bình](doctor_name) có giải thưởng nào không?
+    - Bác sĩ [thể thao](specialty) nào chuyên trị chấn thương?
+    - [Bác sĩ Hạnh](doctor_name) có tham gia hội nghị quốc tế không?
+    - Bác sĩ [lão khoa](specialty) nào hiểu người cao tuổi?
+    - [Bác sĩ Thắng](doctor_name) có kinh nghiệm phẫu thuật không?
+    - Bác sĩ [cột sống](specialty) nào điều trị hiệu quả?
+    - [Bác sĩ Nga](doctor_name) có làm việc tại bệnh viện nào khác?
+    - Bác sĩ [khớp](specialty) nào có kỹ thuật mới?
+    - [Bác sĩ Hiếu](doctor_name) có được bệnh nhân tin tưởng không?
+    - Bác sĩ [hô hấp](specialty) nào chuyên điều trị hen suyễn?
+    - [Bác sĩ Oanh](doctor_name) có thời gian làm việc linh hoạt không?
+
+- intent: ask_specialty
+  examples: |
+    - Bệnh viện có chuyên khoa [thần kinh](specialty) không?
+    - Các chuyên khoa nào đang hoạt động?
+    - Chuyên khoa [nhi](specialty) có không?
+    - Bệnh viện có khoa [sản](specialty) không?
+    - [Khoa ung bướu](specialty) làm việc thứ mấy?
+    - Tôi cần tìm [chuyên khoa tai mũi họng](specialty)
+    - Có [bác sĩ phẫu thuật](specialty) không?
+    - [Khoa nội](specialty) ở tầng mấy?
+    - Bệnh viện có [chuyên khoa tâm lý](specialty) không?
+    - [Khoa da liễu](specialty) có hoạt động không?
+    - Bệnh viện có [chuyên khoa mắt](specialty) không?
+    - [Khoa răng hàm mặt](specialty) ở đâu?
+    - Bệnh viện có [chuyên khoa tim mạch](specialty) không?
+    - [Khoa ngoại](specialty) làm việc từ mấy giờ?
+    - Bệnh viện có [chuyên khoa cấp cứu](specialty) không?
+    - [Khoa phục hồi chức năng](specialty) có hoạt động không?
+    - Bệnh viện có [chuyên khoa dinh dưỡng](specialty) không?
+    - [Khoa xét nghiệm](specialty) ở tầng mấy?
+    - Bệnh viện có [chuyên khoa chẩn đoán hình ảnh](specialty) không?
+    - [Khoa vaccine](specialty) có hoạt động không?
+    - Bệnh viện có [chuyên khoa y học cổ truyền](specialty) không?
+    - [Khoa thể thao](specialty) điều trị những gì?
+    - Bệnh viện có [chuyên khoa lão khoa](specialty) không?
+    - [Khoa cột sống](specialty) có bác sĩ giỏi không?
+    - Bệnh viện có [chuyên khoa khớp](specialty) không?
+    - [Khoa hô hấp](specialty) điều trị bệnh gì?
+    - Bệnh viện có [chuyên khoa tiêu hóa](specialty) không?
+    - [Khoa thận](specialty) có hoạt động không?
+    - Bệnh viện có [chuyên khoa gan](specialty) không?
+    - [Khoa máu](specialty) xét nghiệm những gì?
+    - Bệnh viện có [chuyên khoa nội tiết](specialty) không?
+    - [Khoa tiểu đường](specialty) có bác sĩ chuyên không?
+    - Bệnh viện có [chuyên khoa béo phì](specialty) không?
+    - [Khoa dị ứng](specialty) điều trị như thế nào?
+    - Bệnh viện có [chuyên khoa miễn dịch](specialty) không?
+    - [Khoa sinh sản](specialty) có hoạt động không?
+    - Bệnh viện có [chuyên khoa nam khoa](specialty) không?
+    - [Khoa phụ khoa](specialty) ở tầng mấy?
+    - Bệnh viện có [chuyên khoa vô sinh](specialty) không?
+    - [Khoa gia đình](specialty) điều trị những gì?
+    - Bệnh viện có [chuyên khoa trẻ em](specialty) không?
+    - [Khoa người cao tuổi](specialty) có bác sĩ chuyên không?
+    - Bệnh viện có [chuyên khoa công ty](specialty) không?
+    - [Khoa khám sức khỏe](specialty) có hoạt động không?
+    - Bệnh viện có [chuyên khoa du lịch](specialty) không?
+    - [Khoa cai nghiện](specialty) điều trị như thế nào?
+    - Bệnh viện có [chuyên khoa giảm cân](specialty) không?
+    - [Khoa thẩm mỹ](specialty) có hoạt động không?
+    - Bệnh viện có [chuyên khoa tế bào gốc](specialty) không?
+    - [Khoa gene](specialty) có công nghệ mới không?
+
+- intent: ask_availability
+  examples: |
+    - Có lịch trống vào [thứ 3](date) không?
+    - [Ngày mai](date) còn khung giờ nào khám không?
+    - [Bác sĩ Minh](doctor_name) có rảnh [chiều thứ 6](date) không?
+    - [Sáng thứ 2](date) có lịch khám không?
+    - [Tuần sau](date) bác sĩ có khám không?
+    - [Chủ nhật](date) có bác sĩ trực không?
+    - [Tối nay](date) có thể khám được không?
+    - [Ngày 25](date) có lịch trống không?
+    - [Bác sĩ Hoa](doctor_name) [ngày mai](date) có làm việc không?
+    - [Thứ 7](date) có bác sĩ khám không?
+    - [Tháng này](date) còn lịch trống không?
+    - [Bác sĩ Lan](doctor_name) có rảnh [tuần tới](date) không?
+    - [Ngày 15/8](date) có thể đặt lịch không?
+    - [Chiều nay](date) có bác sĩ trực không?
+    - [Tháng sau](date) có lịch khám không?
+    - [Bác sĩ Hùng](doctor_name) có làm việc [thứ 2](date) không?
+    - [Cuối tuần](date) có phòng khám mở không?
+    - [Ngày lễ](date) có bác sĩ trực không?
+    - [Tết](date) có khám bệnh không?
+    - [Bác sĩ Thảo](doctor_name) có rảnh [sáng mai](date) không?
+    - [30/4](date) có lịch khám không?
+    - [1/5](date) có bác sĩ làm việc không?
+    - [Bác sĩ Nam](doctor_name) có khám [tối thứ 5](date) không?
+    - [Quốc khánh](date) có trực không?
+    - [Rằm tháng 7](date) có bác sĩ không?
+    - [Bác sĩ Linh](doctor_name) có rảnh [chiều chủ nhật](date) không?
+    - [Noel](date) có phòng khám mở không?
+    - [Tết dương lịch](date) có khám không?
+    - [Bác sĩ Đức](doctor_name) có làm việc [8/3](date) không?
+    - [Ngày phụ nữ](date) có lịch trống không?
+    - [20/11](date) có bác sĩ trực không?
+    - [Bác sĩ Mai](doctor_name) có rảnh [ngày giáo viên](date) không?
+    - [Trung thu](date) có khám bệnh không?
+    - [Hung kings](date) có lịch khám không?
+    - [Bác sĩ Tuấn](doctor_name) có làm việc [giờ hành chính](date) không?
+    - [Ngoài giờ](date) có bác sĩ trực không?
+    - [24/7](date) có phòng khám mở không?
+    - [Bác sĩ Hương](doctor_name) có khám [đêm](date) không?
+    - [Khẩn cấp](date) có thể gặp bác sĩ không?
+    - [Cấp cứu](date) có bác sĩ trực không?
+    - [Bác sĩ Quân](doctor_name) có rảnh [ngay bây giờ](date) không?
+    - [Hôm nay](date) còn lịch trống không?
+    - [Chiều mai](date) có thể khám không?
+    - [Bác sĩ Phương](doctor_name) có làm việc [sáng sớm](date) không?
+    - [Trước 8h](date) có bác sĩ không?
+    - [Sau 17h](date) có lịch khám không?
+    - [Bác sĩ Dũng](doctor_name) có rảnh [giờ nghỉ trưa](date) không?
+    - [12h-13h](date) có thể khám không?
+    - [Cuối giờ](date) có bác sĩ trực không?
+    - [Bác sĩ Châu](doctor_name) có làm việc [part-time](date) không?
+
+- intent: provide_info
+  examples: |
+    - Tên tôi là [Nam](patient_name), số điện thoại [0123456789](phone_number)
+    - Tôi muốn khám vào [10h sáng](time)
+    - Tôi tên [Lan](patient_name), muốn khám [ngày 20/7](date)
+    - Số điện thoại của tôi là [0987654321](phone_number)
+    - Tôi tên [Hùng](patient_name), sinh năm [1990](birth_year)
+    - Địa chỉ tôi ở [Quận 1](address)
+    - Tôi muốn khám lúc [2h chiều](time)
+    - BHYT của tôi có hiệu lực
+    - Tôi [25 tuổi](age), nghề nghiệp [kế toán](job)
+    - Tôi tên [Thảo](patient_name), CCCD [123456789](id_number)
+    - Tôi muốn khám vào [8h30](time)
+    - Địa chỉ tôi ở [Phường Bến Nghé](address)
+    - Tôi tên [Minh](patient_name), email [minh@gmail.com](email)
+    - Tôi muốn khám vào [15h45](time)
+    - Số BHYT của tôi là [DN1234567890](insurance_number)
+    - Tôi tên [Hoa](patient_name), tuổi [30](age)
+    - Tôi muốn khám vào [9h15](time)
+    - Địa chỉ tôi ở [Quận 3, TP.HCM](address)
+    - Tôi tên [Linh](patient_name), nghề [giáo viên](job)
+    - Tôi muốn khám vào [14h30](time)
+    - Tôi tên [Đức](patient_name), sinh ngày [15/3/1985](birth_date)
+- intent: confirm_appointment
+  examples: |
+    - Đúng rồi, tôi xác nhận
+    - Ok, đặt lịch đó đi
+    - Xác nhận lịch khám này
+    - Đồng ý
+    - Tôi đồng ý lịch hẹn này
+    - Được rồi, xác nhận đi
+    - Đúng vậy
+    - Tôi chấp nhận lịch này
+    - OK luôn
+    - Đặt lịch đi
+    - Tôi sẽ đến đúng giờ
+    - Lịch này phù hợp
+    - Tôi đồng ý thời gian này
+    - Được, tôi sẽ có mặt
+    - Xác nhận lịch khám
+    - Tôi đồng ý đặt lịch
+    - Lịch hẹn OK
+    - Tôi chấp nhận
+    - Đồng ý hoàn toàn
+    - Tôi sẽ tham dự
+    - Lịch này được
+    - Tôi sẽ đến khám
+    - Đồng ý với thời gian này
+    - Tôi xác nhận tham gia
+    - Được rồi, đặt lịch
+    - Tôi sẽ có mặt đúng giờ
+    - Lịch hẹn phù hợp
+    - Tôi chấp nhận lịch khám
+    - OK, tôi sẽ đến
+    - Xác nhận ngay
+
+- intent: cancel_appointment
+  examples: |
+    - Tôi muốn hủy lịch khám
+    - Hủy lịch [ngày 15/7](date) giúp tôi
+    - Tôi không khám được, hủy lịch giúp tôi
+    - Tôi bận, hủy lịch hẹn
+    - Không thể đến được, hủy lịch
+    - Tôi muốn hủy cuộc hẹn
+    - Hủy lịch khám bệnh
+    - Tôi không có thời gian, hủy lịch
+    - Hủy lịch hẹn với bác sĩ
+    - Tôi muốn hủy đặt lịch
+    - Không đi khám được, hủy lịch
+    - Tôi cần hủy lịch hẹn
+    - Hủy cuộc hẹn giúp tôi
+    - Tôi không thể tham dự, hủy lịch
+    - Hủy lịch khám ngay
+    - Tôi muốn hủy bỏ lịch hẹn
+    - Không khám được, hủy lịch
+    - Tôi cần hủy đặt lịch
+    - Hủy lịch hẹn này
+    - Tôi muốn hủy lịch ngay
+    - Không thể đến, hủy lịch
+    - Tôi muốn hủy cuộc hẹn khám
+    - Hủy lịch khám bệnh này
+    - Tôi không có thời gian, hủy
+    - Hủy lịch hẹn với bệnh viện
+    - Tôi muốn hủy lịch khám ngay
+    - Không đi được, hủy lịch
+    - Tôi cần hủy lịch hẹn này
+    - Hủy đặt lịch khám
+    - Tôi muốn hủy lịch hẹn ngay lập tức
+
+- intent: reschedule_appointment
+  examples: |
+    - Tôi muốn đổi lịch sang [thứ 4](date)
+    - Có thể dời lịch khám sang [tuần sau](date) không?
+    - Đổi lịch khám sang [9h sáng](time) được không?
+    - Tôi muốn thay đổi thời gian hẹn
+    - Dời lịch sang [chiều](time) được không?
+    - Tôi muốn đổi ngày khám
+    - Có thể chuyển lịch sang [chủ nhật](date)?
+    - Đổi giờ hẹn sang [2h chiều](time)
+    - Tôi muốn dời lịch khám
+    - Chuyển lịch sang [tháng sau](date)
+    - Đổi thời gian hẹn khám
+    - Tôi muốn thay đổi lịch hẹn
+    - Dời lịch khám sang [sáng mai](date)
+    - Có thể đổi lịch không?
+    - Tôi muốn chuyển lịch hẹn
+    - Đổi ngày khám sang [thứ 6](date)
+    - Dời thời gian hẹn
+    - Tôi muốn thay đổi ngày khám
+    - Chuyển lịch sang [tuần tới](date)
+    - Đổi giờ khám sang [buổi sáng](time)
+    - Tôi muốn dời lịch hẹn
+    - Có thể chuyển lịch khám không?
+    - Đổi thời gian cuộc hẹn
+    - Tôi muốn thay đổi lịch khám
+    - Dời lịch sang [ngày mai](date)
+    - Chuyển giờ hẹn sáng [tối](time)
+    - Tôi muốn đổi lịch hẹn khám
+    - Dời thời gian khám bệnh
+    - Có thể thay đổi lịch hẹn không?
+    - Tôi muốn chuyển lịch khám
+
+- intent: ask_appointment_status
+  examples: |
+    - Lịch khám của tôi đã được xác nhận chưa?
+    - Kiểm tra lịch khám của tôi [ngày 20/7](date)
+    - Lịch khám của tôi thế nào rồi?
+    - Tình trạng lịch hẹn như thế nào?
+    - Lịch khám đã được duyệt chưa?
+    - Tôi muốn kiểm tra lịch hẹn
+    - Lịch khám của tôi ra sao?
+    - Trạng thái lịch hẹn hiện tại?
+    - Lịch khám đã được xác nhận chưa?
+    - Tôi muốn xem lịch hẹn
+    - Kiểm tra tình trạng lịch khám
+    - Lịch hẹn của tôi đã được phê duyệt chưa?
+    - Tôi muốn biết lịch khám
+    - Xem thông tin lịch hẹn
+    - Lịch khám có được xác nhận không?
+    - Tôi muốn kiểm tra cuộc hẹn
+    - Tình trạng đặt lịch khám?
+    - Lịch hẹn đã sẵn sàng chưa?
+    - Tôi muốn xem thông tin lịch khám
+    - Kiểm tra lịch hẹn khám bệnh
+    - Lịch khám của tôi đã OK chưa?
+    - Tôi muốn biết tình trạng lịch hẹn
+    - Xem lịch khám đã đặt
+    - Lịch hẹn có bị hủy không?
+    - Tôi muốn kiểm tra lịch khám bệnh
+    - Tình trạng cuộc hẹn khám?
+    - Lịch khám đã được thông báo chưa?
+    - Tôi muốn xem lịch hẹn khám
+    - Kiểm tra thông tin cuộc hẹn
+    - Lịch khám có thay đổi gì không?
+
+- intent: thank
+  examples: |
+    - Cảm ơn bạn
+    - Cảm ơn nhiều nhé
+    - Thanks
+    - Cảm ơn đã hỗ trợ
+    - Cảm ơn rất nhiều
+    - Xin cảm ơn
+    - Tôi cảm ơn
+    - Cảm ơn bạn nhiều
+    - Thank you
+    - Cảm ơn đã giúp đỡ
+    - Cảm ơn lắm
+    - Cảm ơn nhé
+    - Cảm ơn sự giúp đỡ
+    - Tôi rất cảm ơn
+    - Cảm ơn bạn rất nhiều
+    - Cảm ơn tư vấn
+    - Cảm ơn thông tin
+    - Cảm ơn đã tư vấn
+    - Cảm ơn sự hỗ trợ
+    - Rất cảm ơn bạn
+    - Cảm ơn nhiều lắm
+    - Cảm ơn đã quan tâm
+    - Cảm ơn ạ
+    - Cảm ơn em
+    - Cảm ơn chị
+    - Cảm ơn anh
+    - Cảm ơn bác sĩ
+    - Cảm ơn y tá
+    - Cảm ơn đã chăm sóc
+    - Cảm ơn dịch vụ tốt
 
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - Không, tôi không muốn khung giờ đó
+    - Không đúng thông tin
+    - Tôi không đồng ý
+    - Không, đổi khung giờ khác
+    - Không phù hợp
+    - Tôi không chấp nhận
+    - Không được
+    - Tôi không muốn
+    - Không, cảm ơn
+    - Tôi từ chối
+    - Không đồng ý
+    - Không OK
+    - Tôi không thích
+    - Không hợp lý
+    - Tôi không đồng ý với điều này
+    - Không, tôi không muốn
+    - Không thể chấp nhận
+    - Tôi không hài lòng
+    - Không, thay đổi khác
+    - Không phải thế
+    - Tôi không muốn như vậy
+    - Không, tôi từ chối
+    - Không chấp nhận được
+    - Tôi không đồng ý hoàn toàn
+    - Không, không được
+    - Tôi không muốn thời gian đó
+    - Không thích lắm
+    - Tôi không đồng ý lịch này
+    - Không, tôi không chấp nhận
+    - Không hợp với tôi
 
-- intent: mood_great
+- intent: inform_symptoms
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - Tôi bị [đau đầu](symptom) và [chóng mặt](symptom)
+    - Tôi bị [đau lưng](symptom) mấy ngày nay
+    - Tôi [ho](symptom) và [sốt nhẹ](symptom)
+    - Triệu chứng của tôi là [mệt mỏi](symptom) và [khó thở](symptom)
+    - Tôi bị [đau bụng](symptom) và [tiêu chảy](symptom)
+    - Tôi bị [đau mắt](symptom), có phải khám [mắt](specialty) không?
+    - Tôi bị [đau ngực](symptom), nên gặp bác sĩ [tim mạch](specialty)
+    - Tôi bị [đau khớp](symptom) và [sưng chân](symptom)
+    - Tôi bị [mất ngủ](symptom) và [lo âu](symptom) gần đây
+    - Tôi bị [phát ban](symptom) trên da, nên khám [da liễu](specialty) đúng không?
+    - Tôi bị [sốt cao](symptom) và [đau họng](symptom)
+    - Tôi có [nôn mửa](symptom) và [chóng mặt](symptom)
+    - Tôi bị [đau răng](symptom) dữ dội
+    - Tôi có [rối loạn tiêu hóa](symptom) và [đầy hơi](symptom)
+    - Tôi bị [đau cơ](symptom) và [mệt mỏi](symptom)
+    - Tôi có [khó nuốt](symptom) và [đau họng](symptom)
+    - Tôi bị [chảy máu cam](symptom) thường xuyên
+    - Tôi có [tim đập nhanh](symptom) và [khó thở](symptom)
+    - Tôi bị [buồn nôn](symptom) và [không có cảm giác ngon miệng](symptom)
+    - Tôi có [đau đầu dữ dội](symptom) và [nhạy cảm với ánh sáng](symptom)
+    - Tôi bị [ho khan](symptom) và [đau ngực](symptom)
+    - Tôi có [tiểu đường](symptom) và [khát nước](symptom)
+    - Tôi bị [táo bón](symptom) và [đau bụng](symptom)
+    - Tôi có [tăng huyết áp](symptom) và [đau đầu](symptom)
+    - Tôi bị [viêm khớp](symptom) và [đau cứng](symptom)
+    - Tôi có [dị ứng](symptom) và [ngứa ngáy](symptom)
+    - Tôi bị [đau thần kinh](symptom) và [tê chân tay](symptom)
+    - Tôi có [rối loạn giấc ngủ](symptom) và [mệt mỏi](symptom)
+    - Tôi bị [viêm phế quản](symptom) và [ho có đờm](symptom)
+    - Tôi có [bệnh tim](symptom) và [đau ngực](symptom)
+    - Tôi bị [suy thận](symptom) và [phù nề](symptom)
+    - Tôi có [bệnh gan](symptom) và [vàng da](symptom)
+    - Tôi bị [đau dạ dày](symptom) và [ợ chua](symptom)
+    - Tôi có [mất trí nhớ](symptom) và [lú lẫn](symptom)
+    - Tôi bị [đau lưng](symptom) và [tê chân](symptom)
+    - Tôi có [viêm đại tràng](symptom) và [đau bụng](symptom)
+    - Tôi bị [cao huyết áp](symptom) và [choáng váng](symptom)
+    - Tôi có [đau cột sống](symptom) và [khó cử động](symptom)
+    - Tôi bị [viêm họng](symptom) và [khàn tiếng](symptom)
+    - Tôi có [đau tai](symptom) và [chảy dịch](symptom)
+    - Tôi bị [viêm xoang](symptom) và [đau đầu](symptom)
+    - Tôi có [đau cơ](symptom) sau khi [tập thể dục](symptom)
+    - Tôi bị [stress](symptom) và [lo âu](symptom)
+    - Tôi có [đau bụng kinh](symptom) và [buồn nôn](symptom)
+    - Tôi bị [cảm cúm](symptom) và [sốt](symptom)
+    - Tôi có [viêm da](symptom) và [ngứa](symptom)
+    - Tôi bị [tăng cholesterol](symptom) và [mệt mỏi](symptom)
+    - Tôi có [viêm khớp gối](symptom) và [khó đi lại](symptom)
+    - Tôi bị [đau vai gáy](symptom) và [tê tay](symptom)
+    - Tôi có [viêm amidan](symptom) và [nuốt đau](symptom)
+    - Tôi bị [mất cân bằng](symptom) và [chóng mặt](symptom)
 
-- intent: mood_unhappy
+- intent: ask_hospital_info
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Bệnh viện ở đâu?
+    - Bệnh viện mở cửa đến mấy giờ?
+    - Địa chỉ bệnh viện là gì?
+    - Có bãi đỗ xe không?
+    - Giờ làm việc của bệnh viện?
+    - Số điện thoại bệnh viện là gì?
+    - Bệnh viện có mở cửa cuối tuần không?
+    - Cách đi đến bệnh viện?
+    - Bệnh viện có những chuyên khoa gì?
+    - Phí khám bệnh là bao nhiêu?
+    - Bệnh viện có nhận bảo hiểm y tế không?
+    - Thời gian chờ khám bao lâu?
+    - Bệnh viện có dịch vụ cấp cứu không?
+    - Có thể đặt lịch online không?
+    - Bệnh viện có phòng khám ngoài giờ không?
+    - Thủ tục nhập viện như thế nào?
+    - Bệnh viện có căn tin không?
+    - Giá dịch vụ y tế ở đây thế nào?
+    - Bệnh viện có wifi miễn phí không?
+    - Có thể thanh toán bằng thẻ không?
+    - Bệnh viện có phòng chờ thoải mái không?
+    - Có dịch vụ xe đưa đón không?
+    - Bệnh viện có máy ATM không?
+    - Giờ thăm bệnh nhân là mấy giờ?
+    - Bệnh viện có nhà thuốc không?
+    - Có thể hủy lịch hẹn không?
+    - Bệnh viện có dịch vụ xét nghiệm không?
+    - Thời gian làm việc của các khoa?
+    - Bệnh viện có phòng cấp cứu 24/7 không?
+    - Có dịch vụ chăm sóc tại nhà không?
+    - Bệnh viện có thiết bị hiện đại không?
+    - Giá phòng nội trú là bao nhiêu?
+    - Có thể đăng ký khám qua điện thoại không?
+    - Bệnh viện có chương trình khuyến mãi không?
+    - Thời gian chờ kết quả xét nghiệm?
+    - Bệnh viện có phòng khám VIP không?
+    - Có dịch vụ tư vấn sức khỏe không?
+    - Bệnh viện có đội ngũ bác sĩ giỏi không?
+    - Có thể xem kết quả online không?
+    - Bệnh viện có hệ thống đặt lịch hiện đại không?
+    - Giờ mở cửa vào ngày lễ?
+    - Có dịch vụ khám tổng quát không?
+    - Bệnh viện có chương trình chăm sóc khách hàng không?
+    - Thời gian chờ để được khám?
+    - Bệnh viện có phòng cách ly không?
+    - Có dịch vụ chăm sóc người già không?
+    - Bệnh viện có phòng khám trẻ em không?
+    - Giá khám chuyên khoa là bao nhiêu?
+    - Có thể đặt lịch khám khẩn cấp không?
+    - Bệnh viện có dịch vụ tư vấn dinh dưỡng không?
+    - Thời gian hoạt động của phòng cấp cứu?
 
-- intent: bot_challenge
+- intent: fallback
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - Tôi không hiểu
+    - Cái gì vậy?
+    - Hả?
+    - Bạn nói gì?
+    - Ý bạn là sao?
+    - Không rõ
+    - Tôi chưa hiểu
+    - Lạ quá
+    - Sao vậy?
+    - Nghĩa là gì?
+    - Không biết
+    - Chưa rõ lắm
+    - Hơi khó hiểu
+    - Bạn có thể giải thích lại không?
+    - Tôi bối rối
+    - Không theo kịp
+    - Lạ nhỉ
+    - Gì cơ?
+    - Thế à?
+    - Ủa?
+    - Hử?
+    - Không hiểu gì hết
+    - Mình không rõ
+    - Khó hiểu quá
+    - Bạn nói lại đi
+    - Tôi chưa kịp hiểu
+    - Điều gì vậy?
+    - Cái j đây?
+    - Ko hiểu
+    - Hơi rối
+    - Lạ thật
+    - Phức tạp quá
+    - Tôi không theo được
+    - Bất ngờ
+    - Mơ hồ quá
+    - Không rõ ràng
+    - Tôi chưa nghe hiểu
+    - Sao lại thế?
+    - Thế nghĩa là gì?
+    - Không nắm được
+    - Hơi phức tạp
+    - Tôi chưa hiểu hết
+    - Mệnh đề gì vậy?
+    - Không đơn giản
+    - Khó nắm bắt
+    - Tôi chưa rõ
+    - Nói lại xem
+    - Không thể hiểu
+    - Tôi bị lúng túng
+    - Mình chưa hiểu rõ
+    - Nó là gì vậy?
+    - Tôi không hiểu ý bạn
+    - Câu hỏi gì vậy?
+    - Tôi chưa nắm được
+    - Không biết nói gì
+    - Tôi không rõ
+    - Bạn đang nói về gì?
+    - Tôi không hiểu câu hỏi
+    - Chưa hiểu rõ
+    - Tôi không biết trả lời
+    - Câu này khó hiểu
+    - Tôi chưa hiểu ý nghĩa
+    - Không theo được
+    - Tôi không hiểu vấn đề
+    - Bạn có thể nói rõ hơn không?
+    - Tôi chưa hiểu được
+    - Không nắm bắt được
+    - Tôi cần giải thích thêm
+    - Chưa rõ ý nghĩa
+    - Tôi không hiểu hoàn toàn
+    - Cần làm rõ thêm
+    - Tôi chưa hiểu đầy đủ
+    - Không hiểu rõ
+    - Tôi cần thêm thông tin
+    - Chưa nắm được ý
+    - Tôi không hiểu nội dung
+    - Bạn có thể giải thích không?
+    - Tôi chưa hiểu vấn đề
+    - Không hiểu câu hỏi
+    - Tôi cần hướng dẫn
+    - Chưa rõ vấn đề
+    - Tôi không hiểu yêu cầu
+    - Cần thêm thông tin
+    - Tôi chưa hiểu mục đích
+    - Không rõ ý định
+    - Tôi không hiểu điều này
+    - Bạn muốn gì?
+    - Tôi chưa hiểu được ý
+    - Không hiểu mục đích
+    - Tôi cần làm rõ
+    - Chưa nắm được vấn đề
+    - Tôi không hiểu tình huống
+    - Cần giải thích rõ
+    - Tôi chưa hiểu ngữ cảnh
+    - Không hiểu bối cảnh
+    - Tôi cần thêm chi tiết
+    - Chưa hiểu hoàn cảnh
+    - Tôi không hiểu trường hợp này
+    - Cần mô tả thêm
+    - Tôi chưa hiểu đúng
+    - Không rõ tình huống
+    - Tôi cần thêm thông tin chi tiết
+    - Chưa hiểu rõ vấn đề
+    - Tôi không hiểu chính xác
+    - Cần giải thích chi tiết
+    - Tôi chưa hiểu đầy đủ ý nghĩa
+    - Không nắm được toàn bộ
+    - Tôi cần hướng dẫn cụ thể
+    - Chưa hiểu được hoàn toàn
+    - Tôi không hiểu yêu cầu cụ thể
+    - Cần thêm thông tin chi tiết
+    - Tôi chưa hiểu mục tiêu
+
+
+synonyms:
+  - entity: product
+    value: laptop
+    synonyms:
+      - máy tính xách tay
+      - notebook
+      - máy tính
+  - entity: product
+    value: điện thoại
+    synonyms:
+      - smartphone
+      - di động
+      - phone

@@ -1,13 +1,27 @@
 version: "3.1"
 
 rules:
+- rule: Say hello when user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Say goodbye when user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Say thank you when user thanks
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: thank
+  - action: utter_thank
+
+- rule: Deny appointment when user denies
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: Handle fallback
+  steps:
+  - intent: fallback
+  - action: utter_fallback

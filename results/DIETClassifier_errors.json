@@ -1,0 +1,125 @@
+[
+  {
+    "text": "Tôi tên Hùng, sinh năm 1990",
+    "entities": [
+      {
+        "start": 8,
+        "end": 12,
+        "value": "Hùng",
+        "entity": "patient_name"
+      },
+      {
+        "start": 23,
+        "end": 27,
+        "value": "1990",
+        "entity": "birth_year"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "patient_name",
+        "start": 8,
+        "end": 12,
+        "confidence_entity": 0.9978308081626892,
+        "value": "Hùng",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "phone_number",
+        "start": 23,
+        "end": 27,
+        "confidence_entity": 0.4026466906070709,
+        "value": "1990",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Tôi tên Hoa, tuổi 30",
+    "entities": [
+      {
+        "start": 8,
+        "end": 11,
+        "value": "Hoa",
+        "entity": "patient_name"
+      },
+      {
+        "start": 18,
+        "end": 20,
+        "value": "30",
+        "entity": "age"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "patient_name",
+        "start": 8,
+        "end": 11,
+        "confidence_entity": 0.9982847571372986,
+        "value": "Hoa",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "phone_number",
+        "start": 18,
+        "end": 20,
+        "confidence_entity": 0.4628297686576843,
+        "value": "30",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  },
+  {
+    "text": "Tôi tên Đức, sinh ngày 15/3/1985",
+    "entities": [
+      {
+        "start": 8,
+        "end": 11,
+        "value": "Đức",
+        "entity": "patient_name"
+      },
+      {
+        "start": 23,
+        "end": 32,
+        "value": "15/3/1985",
+        "entity": "birth_date"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "patient_name",
+        "start": 8,
+        "end": 11,
+        "confidence_entity": 0.9962390661239624,
+        "value": "Đức",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "date",
+        "start": 23,
+        "end": 32,
+        "confidence_entity": 0.5762304067611694,
+        "value": "15/3/1985",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

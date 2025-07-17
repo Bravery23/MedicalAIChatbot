@@ -1,0 +1,42 @@
+[
+  {
+    "text": "Cảm ơn bác sĩ",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.8590192198753357
+    }
+  },
+  {
+    "text": "Cảm ơn bạn đã tư vấn",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.542647659778595
+    }
+  },
+  {
+    "text": "Cảm ơn sự hỗ trợ",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.9613202214241028
+    }
+  },
+  {
+    "text": "Chào bác sĩ trực",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5741077065467834
+    }
+  },
+  {
+    "text": "Chào bác sĩ mắt",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.6525624990463257
+    }
+  }
+]

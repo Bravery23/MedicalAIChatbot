@@ -1,0 +1,132 @@
+version: "3.1"
+
+stories:
+# Story for booking an appointment
+- story: Book appointment with specialty and date
+  steps:
+  - intent: book_appointment
+    entities:
+    - specialty
+    - date
+  - slot_was_set:
+    - specialty: "{specialty}"
+    - date: "{date}"
+  - action: action_book_appointment
+  - intent: confirm_appointment
+  - action: utter_confirm_appointment
+  - action: action_save_appointment
+
+# Story for booking an appointment with doctor name
+- story: Book appointment with doctor
+  steps:
+  - intent: book_appointment
+    entities:
+    - doctor_name
+  - slot_was_set:
+    - doctor_name: "{doctor_name}"
+  - action: utter_ask_date
+  - intent: provide_info
+    entities:
+    - date
+  - slot_was_set:
+    - date: "{date}"
+  - action: action_book_appointment
+  - intent: confirm_appointment
+  - action: utter_confirm_appointment
+  - action: action_save_appointment
+
+# Story for rescheduling an appointment
+- story: Reschedule appointment
+  steps:
+  - intent: reschedule_appointment
+    entities:
+    - date
+  - slot_was_set:
+    - date: "{date}"
+  - action: action_reschedule_appointment
+  - intent: confirm_appointment
+  - action: utter_confirm_appointment
+  - action: action_save_appointment
+
+# Story for canceling an appointment
+- story: Cancel appointment
+  steps:
+  - intent: cancel_appointment
+  - action: action_cancel_appointment
+  - action: utter_cancel_appointment
+
+# Story for asking doctor information
+- story: Ask doctor information
+  steps:
+  - intent: ask_doctor_info
+    entities:
+    - doctor_name
+  - slot_was_set:
+    - doctor_name: "{doctor_name}"
+  - action: action_provide_doctor_info
+
+# Story for asking specialty information
+- story: Ask specialty information
+  steps:
+  - intent: ask_specialty
+    entities:
+    - specialty
+  - slot_was_set:
+    - specialty: "{specialty}"
+  - action: action_provide_specialty_info
+
+# Story for asking appointment availability
+- story: Ask appointment availability
+  steps:
+  - intent: ask_availability
+    entities:
+    - date
+  - slot_was_set:
+    - date: "{date}"
+  - action: action_check_availability
+
+# Story for providing patient information
+- story: Provide patient information
+  steps:
+  - intent: provide_info
+    entities:
+    - patient_name
+    - phone_number
+  - slot_was_set:
+    - patient_name: "{patient_name}"
+    - phone_number: "{phone_number}"
+  - action: utter_confirm_info
+  - intent: confirm_appointment
+  - action: action_save_appointment
+
+# Story for informing symptoms
+- story: Inform symptoms
+  steps:
+  - intent: inform_symptoms
+    entities:
+    - symptom
+  - slot_was_set:
+    - symptom: "{symptom}"
+  - action: action_suggest_specialty
+  - intent: book_appointment
+    entities:
+    - specialty
+  - slot_was_set:
+    - specialty: "{specialty}"
+  - action: action_book_appointment
+
+# Story for asking appointment status
+- story: Ask appointment status
+  steps:
+  - intent: ask_appointment_status
+    entities:
+    - date
+  - slot_was_set:
+    - date: "{date}"
+  - action: action_check_appointment_status
+
+# Story for asking hospital information
+- story: Ask hospital information
+  steps:
+  - intent: ask_hospital_info
+  - action: action_provide_hospital_info

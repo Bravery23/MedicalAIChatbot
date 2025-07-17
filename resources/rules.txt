@@ -1,0 +1,27 @@
+version: "3.1"
+
+rules:
+- rule: Say hello when user greets
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye when user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say thank you when user thanks
+  steps:
+  - intent: thank
+  - action: utter_thank
+
+- rule: Deny appointment when user denies
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- rule: Handle fallback
+  steps:
+  - intent: fallback
+  - action: utter_fallback

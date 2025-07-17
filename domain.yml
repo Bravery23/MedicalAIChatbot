@@ -3,31 +3,169 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
+  - book_appointment_by_specialty
+  - book_appointment_by_doctor
+  - ask_doctor_info
+  - ask_specialty
+  - ask_availability
+  - provide_info
+  - confirm_appointment
+  - cancel_appointment
+  - reschedule_appointment
+  - ask_appointment_status
+  - thank
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - inform_symptoms
+  - ask_hospital_info
+  - fallback
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+  - text: "Xin chào! Tôi có thể giúp gì cho bạn hôm nay?"
+  - text: "Chào bạn! Bạn cần hỗ trợ về vấn đề gì?"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Tạm biệt! Chúc bạn một ngày tốt lành!"
+  - text: "Hẹn gặp lại bạn! Cảm ơn đã liên hệ."
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_thank:
+  - text: "Không có gì, rất vui được giúp bạn!"
+  - text: "Cảm ơn bạn đã tin tưởng chúng tôi!"
+
+  utter_deny:
+  - text: "Vậy bạn muốn thay đổi gì không? Tôi sẵn sàng hỗ trợ!"
+  - text: "Không sao, bạn có muốn thử một lựa chọn khác không?"
+
+  utter_fallback:
+  - text: "Xin lỗi, tôi chưa hiểu rõ ý bạn. Bạn có thể nói thêm không?"
+  - text: "Hơi khó hiểu, bạn có thể giải thích thêm được không?"
+
+  utter_confirm_appointment:
+  - text: "Lịch hẹn của bạn đã được xác nhận. Bạn sẽ nhận được thông báo chi tiết qua email hoặc SMS!"
+  - text: "Cảm ơn bạn đã xác nhận! Lịch hẹn đã được lưu."
+
+  utter_ask_date:
+  - text: "Bạn muốn đặt lịch vào ngày nào?"
+  - text: "Vui lòng cho tôi biết ngày bạn muốn khám."
+
+  utter_confirm_info:
+  - text: "Cảm ơn bạn đã cung cấp thông tin! Vui lòng xác nhận để hoàn tất."
+  - text: "Thông tin của bạn đã được ghi nhận. Bạn có muốn xác nhận lịch hẹn không?"
+
+  utter_cancel_appointment:
+  - text: "Lịch hẹn của bạn đã được hủy. Có gì khác tôi có thể giúp?"
+  - text: "Đã hủy lịch hẹn thành công. Bạn có muốn đặt lại lịch mới không?"
+
+actions:
+  - action_book_appointment
+  - action_reschedule_appointment
+  - action_cancel_appointment
+  - action_provide_doctor_info
+  - action_provide_specialty_info
+  - action_check_availability
+  - action_suggest_specialty
+  - action_check_appointment_status
+  - action_provide_hospital_info
+  - action_save_appointment
+
+slots:
+  patient_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: patient_name
+
+  phone_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: phone_number
+
+  address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: address
+
+  birth_year:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: birth_year
+
+  age:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: age
+
+  job:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: job
+
+  id_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: id_number
+
+  email:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: email
+
+  insurance_number:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: insurance_number
+
+  doctor_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: doctor_name
+
+  specialty:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: specialty
+
+  date:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: date
+
+  time:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: time
+
+  symptom:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: symptom
 
 session_config:
   session_expiration_time: 60

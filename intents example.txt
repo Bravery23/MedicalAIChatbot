@@ -1,0 +1,115 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Xin chào
+    - Chào bạn
+    - Hi
+    - Chào bác sĩ
+
+- intent: goodbye
+  examples: |
+    - Tạm biệt
+    - Cảm ơn, bye
+    - Kết thúc
+    - Hẹn gặp lại
+
+- intent: book_appointment
+  examples: |
+    - Tôi muốn đặt lịch khám
+    - Đặt lịch khám vào thứ 5
+    - Cho tôi đặt lịch với [bác sĩ Minh](doctor_name)
+    - Tôi cần đặt lịch khám [mắt](specialty)
+
+- intent: ask_doctor_info
+  examples: |
+    - Bác sĩ nào chuyên về [tim mạch](specialty)?
+    - [Bác sĩ Lan](doctor_name) có làm việc thứ 7 không?
+    - Thông tin về [bác sĩ Hùng](doctor_name)
+    - Bác sĩ này có kinh nghiệm bao nhiêu năm?
+
+- intent: ask_specialty
+  examples: |
+    - Bệnh viện có chuyên khoa [thần kinh](specialty) không?
+    - Các chuyên khoa nào đang hoạt động?
+    - Chuyên khoa [nhi](specialty) có không?
+
+- intent: ask_availability
+  examples: |
+    - Có lịch trống vào [thứ 3](date) không?
+    - [Ngày mai](date) còn khung giờ nào khám không?
+    - [Bác sĩ Minh](doctor_name) có rảnh [chiều thứ 6](date) không?
+
+- intent: provide_info
+  examples: |
+    - Tên tôi là [Nam](patient_name), số điện thoại [0123456789](phone_number)
+    - Tôi muốn khám vào [10h sáng](time)
+    - Tôi tên [Lan](patient_name), muốn khám [ngày 20/7](date)
+    - Số điện thoại của tôi là [0987654321](phone_number)
+
+- intent: confirm_appointment
+  examples: |
+    - Đúng rồi, tôi xác nhận
+    - Ok, đặt lịch đó đi
+    - Xác nhận lịch khám này
+    - Đồng ý
+
+- intent: cancel_appointment
+  examples: |
+    - Tôi muốn hủy lịch khám
+    - Hủy lịch [ngày 15/7](date) giúp tôi
+    - Tôi không khám được, hủy lịch giúp tôi
+
+- intent: reschedule_appointment
+  examples: |
+    - Tôi muốn đổi lịch sang [thứ 4](date)
+    - Có thể dời lịch khám sang [tuần sau](date) không?
+    - Đổi lịch khám sang [9h sáng](time) được không?
+
+- intent: ask_appointment_status
+  examples: |
+    - Lịch khám của tôi đã được xác nhận chưa?
+    - Kiểm tra lịch khám của tôi [ngày 20/7](date)
+    - Lịch khám của tôi thế nào rồi?
+
+- intent: thank
+  examples: |
+    - Cảm ơn bạn
+    - Cảm ơn nhiều nhé
+    - Thanks
+    - Cảm ơn đã hỗ trợ
+
+- intent: deny
+  examples: |
+    - Không, tôi không muốn khung giờ đó
+    - Không đúng thông tin
+    - Tôi không đồng ý
+    - Không, đổi khung giờ khác
+
+- intent: inform_symptoms
+  examples: |
+    - Tôi bị [đau đầu](symptom) và [chóng mặt](symptom)
+    - Tôi bị [đau lưng](symptom) mấy ngày nay
+    - Tôi [ho](symptom) và [sốt nhẹ](symptom)
+    - Triệu chứng của tôi là [mệt mỏi](symptom) và [khó thở](symptom)
+    - Tôi bị [đau bụng](symptom) và [tiêu chảy](symptom)
+    - Tôi bị [đau mắt](symptom), có phải khám [mắt](specialty) không?
+    - Tôi bị [đau ngực](symptom), nên gặp bác sĩ [tim mạch](specialty)
+    - Tôi bị [đau khớp](symptom) và [sưng chân](symptom)
+    - Tôi bị [mất ngủ](symptom) và [lo âu](symptom) gần đây
+    - Tôi bị [phát ban](symptom) trên da, nên khám [da liễu](specialty) đúng không?
+
+- intent: ask_hospital_info
+  examples: |
+    - Bệnh viện ở đâu?
+    - Bệnh viện mở cửa đến mấy giờ?
+    - Địa chỉ bệnh viện là gì?
+    - Có bãi đỗ xe không?
+
+- intent: fallback
+  examples: |
+    - Tôi không hiểu
+    - Cái gì vậy?
+    - Hả?
+    - Bạn nói gì?

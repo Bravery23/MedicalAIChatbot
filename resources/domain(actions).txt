@@ -1,0 +1,13 @@
+actions:
+  - action_book_appointment
+  - action_reschedule_appointment
+  - action_cancel_appointment
+  - action_provide_doctor_info
+  - action_provide_specialty_info
+  - action_check_availability
+  - action_suggest_specialty
+  - action_check_appointment_status
+  - action_provide_hospital_info
+  - action_save_appointment
+
+https://grok.com/chat/910d1515-6e85-47eb-a16f-d7216ef0f031

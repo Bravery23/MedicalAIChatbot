@@ -1,0 +1,50 @@
+slots:
+  patient_name:
+    type: text
+    influence_conversation: false
+  phone_number:
+    type: text
+    influence_conversation: false
+  address:
+    type: text
+    influence_conversation: false
+  birth_year:
+    type: text
+    influence_conversation: false
+  age:
+    type: text
+    influence_conversation: false
+  job:
+    type: text
+    influence_conversation: false
+  id_number:
+    type: text
+    influence_conversation: false
+  email:
+    type: text
+    influence_conversation: false
+  insurance_number:
+    type: text
+    influence_conversation: false
+  doctor_name:
+    type: text
+    influence_conversation: true
+  specialty:
+    type: text
+    influence_conversation: true
+  date:
+    type: text
+    influence_conversation: true
+  time:
+    type: text
+    influence_conversation: true
+  symptom:
+    type: list
+    influence_conversation: true
+
+Giải thích:
+
+Các slot như patient_name, phone_number, address, v.v. được dùng để lưu thông tin cá nhân từ intent provide_info.
+Các slot như doctor_name, specialty, date, time được dùng để xử lý đặt lịch khám (book_appointment, reschedule_appointment).
+Slot symptom là danh sách để lưu các triệu chứng từ intent inform_symptoms.
+influence_conversation: true được sử dụng cho các slot ảnh hưởng đến luồng hội thoại (ví dụ: specialty hoặc date có thể quyết định câu trả lời của chatbot).
