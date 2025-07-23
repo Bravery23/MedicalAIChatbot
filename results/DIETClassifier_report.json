@@ -1,16 +1,37 @@
 {
-  "phone_number": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 2,
+  "specialty": {
+    "precision": 1.0,
+    "recall": 0.9619565217391305,
+    "f1-score": 0.9806094182825486,
+    "support": 184,
     "confused_with": {}
   },
-  "job": {
+  "phone_number": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 4,
+    "support": 2,
+    "confused_with": {}
+  },
+  "time": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 24,
+    "confused_with": {}
+  },
+  "birth_year": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1,
+    "confused_with": {}
+  },
+  "birth_date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1,
     "confused_with": {}
   },
   "patient_name": {
@@ -27,50 +48,32 @@
     "support": 8,
     "confused_with": {}
   },
-  "time": {
+  "age": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 16,
-    "confused_with": {}
-  },
-  "date": {
-    "precision": 0.9932432432432432,
-    "recall": 1.0,
-    "f1-score": 0.9966101694915254,
-    "support": 147,
-    "confused_with": {}
-  },
-  "birth_year": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1,
-    "confused_with": {
-      "phone_number": 1
-    }
-  },
-  "birth_date": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 1,
-    "confused_with": {
-      "date": 1
-    }
-  },
-  "email": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 1,
+    "support": 3,
     "confused_with": {}
   },
   "symptom": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 220,
+    "support": 163,
+    "confused_with": {}
+  },
+  "date": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 133,
+    "confused_with": {}
+  },
+  "job": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
     "confused_with": {}
   },
   "insurance_number": {
@@ -82,26 +85,10 @@
   },
   "doctor_name": {
     "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 132,
+    "recall": 0.9791666666666666,
+    "f1-score": 0.9894736842105264,
+    "support": 96,
     "confused_with": {}
-  },
-  "specialty": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 306,
-    "confused_with": {}
-  },
-  "age": {
-    "precision": 1.0,
-    "recall": 0.6666666666666666,
-    "f1-score": 0.8,
-    "support": 3,
-    "confused_with": {
-      "phone_number": 1
-    }
   },
   "id_number": {
     "precision": 1.0,
@@ -110,23 +97,30 @@
     "support": 1,
     "confused_with": {}
   },
+  "email": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 1,
+    "confused_with": {}
+  },
   "micro avg": {
-    "precision": 0.9964747356051704,
-    "recall": 0.9964747356051704,
-    "f1-score": 0.9964747356051704,
-    "support": 851
+    "precision": 1.0,
+    "recall": 0.9856687898089171,
+    "f1-score": 0.9927826784282278,
+    "support": 628
   },
   "macro avg": {
-    "precision": 0.8328828828828828,
-    "recall": 0.8444444444444444,
-    "f1-score": 0.8308851224105461,
-    "support": 851
+    "precision": 1.0,
+    "recall": 0.9960748792270532,
+    "f1-score": 0.9980055401662049,
+    "support": 628
   },
   "weighted avg": {
-    "precision": 0.9953075872582335,
-    "recall": 0.9964747356051704,
-    "f1-score": 0.9955758263790688,
-    "support": 851
+    "precision": 1.0,
+    "recall": 0.9856687898089171,
+    "f1-score": 0.9927095647264323,
+    "support": 628
   },
-  "accuracy": 0.9992810927390366
+  "accuracy": 0.9973053892215569
 }

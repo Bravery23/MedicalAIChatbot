@@ -165,7 +165,7 @@ nlu:
   examples: |
     - Bác sĩ nào chuyên về [tim mạch](specialty)?
     - [Bác sĩ Lan](doctor_name) có làm việc thứ 7 không?
-    - Thông tin về [bác sĩ Hùng](doctor_name)
+    - Thông tin về bác sĩ [Hùng](doctor_name)
     - Bác sĩ này có kinh nghiệm bao nhiêu năm?
     - [Bác sĩ Minh](doctor_name) khám [thứ mấy](date)?
     - Bác sĩ [nhi](specialty) nào giỏi nhất?
@@ -651,118 +651,21 @@ nlu:
 
 - intent: fallback
   examples: |
-    - Tôi không hiểu
-    - Cái gì vậy?
-    - Hả?
-    - Bạn nói gì?
-    - Ý bạn là sao?
-    - Không rõ
-    - Tôi chưa hiểu
-    - Lạ quá
-    - Sao vậy?
-    - Nghĩa là gì?
-    - Không biết
-    - Chưa rõ lắm
-    - Hơi khó hiểu
-    - Bạn có thể giải thích lại không?
-    - Tôi bối rối
-    - Không theo kịp
-    - Lạ nhỉ
-    - Gì cơ?
-    - Thế à?
-    - Ủa?
-    - Hử?
-    - Không hiểu gì hết
-    - Mình không rõ
-    - Khó hiểu quá
-    - Bạn nói lại đi
-    - Tôi chưa kịp hiểu
-    - Điều gì vậy?
-    - Cái j đây?
-    - Ko hiểu
-    - Hơi rối
-    - Lạ thật
-    - Phức tạp quá
-    - Tôi không theo được
-    - Bất ngờ
-    - Mơ hồ quá
-    - Không rõ ràng
-    - Tôi chưa nghe hiểu
-    - Sao lại thế?
-    - Thế nghĩa là gì?
-    - Không nắm được
-    - Hơi phức tạp
-    - Tôi chưa hiểu hết
-    - Mệnh đề gì vậy?
-    - Không đơn giản
-    - Khó nắm bắt
-    - Tôi chưa rõ
-    - Nói lại xem
-    - Không thể hiểu
-    - Tôi bị lúng túng
-    - Mình chưa hiểu rõ
-    - Nó là gì vậy?
-    - Tôi không hiểu ý bạn
-    - Câu hỏi gì vậy?
-    - Tôi chưa nắm được
-    - Không biết nói gì
-    - Tôi không rõ
-    - Bạn đang nói về gì?
-    - Tôi không hiểu câu hỏi
-    - Chưa hiểu rõ
-    - Tôi không biết trả lời
-    - Câu này khó hiểu
-    - Tôi chưa hiểu ý nghĩa
-    - Không theo được
-    - Tôi không hiểu vấn đề
-    - Bạn có thể nói rõ hơn không?
-    - Tôi chưa hiểu được
-    - Không nắm bắt được
-    - Tôi cần giải thích thêm
-    - Chưa rõ ý nghĩa
-    - Tôi không hiểu hoàn toàn
-    - Cần làm rõ thêm
-    - Tôi chưa hiểu đầy đủ
-    - Không hiểu rõ
-    - Tôi cần thêm thông tin
-    - Chưa nắm được ý
-    - Tôi không hiểu nội dung
-    - Bạn có thể giải thích không?
-    - Tôi chưa hiểu vấn đề
-    - Không hiểu câu hỏi
-    - Tôi cần hướng dẫn
-    - Chưa rõ vấn đề
-    - Tôi không hiểu yêu cầu
-    - Cần thêm thông tin
-    - Tôi chưa hiểu mục đích
-    - Không rõ ý định
-    - Tôi không hiểu điều này
-    - Bạn muốn gì?
-    - Tôi chưa hiểu được ý
-    - Không hiểu mục đích
-    - Tôi cần làm rõ
-    - Chưa nắm được vấn đề
-    - Tôi không hiểu tình huống
-    - Cần giải thích rõ
-    - Tôi chưa hiểu ngữ cảnh
-    - Không hiểu bối cảnh
-    - Tôi cần thêm chi tiết
-    - Chưa hiểu hoàn cảnh
-    - Tôi không hiểu trường hợp này
-    - Cần mô tả thêm
-    - Tôi chưa hiểu đúng
-    - Không rõ tình huống
-    - Tôi cần thêm thông tin chi tiết
-    - Chưa hiểu rõ vấn đề
-    - Tôi không hiểu chính xác
-    - Cần giải thích chi tiết
-    - Tôi chưa hiểu đầy đủ ý nghĩa
-    - Không nắm được toàn bộ
-    - Tôi cần hướng dẫn cụ thể
-    - Chưa hiểu được hoàn toàn
-    - Tôi không hiểu yêu cầu cụ thể
-    - Cần thêm thông tin chi tiết
-    - Tôi chưa hiểu mục tiêu
+    - Tôi bị đau XYZ
+    - Cái gì đó kỳ lạ đang xảy ra
+    - Không biết nữa, tôi thấy khó chịu
+    - Bạn có thể giúp tôi với vấn đề này không?
+    - XYZ là gì?
+    - Tôi cần gặp bác sĩ nhưng không biết chuyên khoa nào
+    - Có cách nào chữa nhanh được không?
+    - Tôi bị đau ở chỗ kỳ lạ
+    - Làm sao để hết mệt?
+    - Tôi muốn hỏi cái này nhưng không biết nói thế nào
+    - Bệnh này có lây không?
+    - Tôi thấy lạ ở bụng
+    - Có thuốc gì uống cho khỏe ngay không?
+    - Bạn có biết về bệnh ABC không?
+    - Tôi bị cái gì đó không rõ
 
 
 synonyms:

@@ -8,9 +8,27 @@ assistant_id: 20250715-192920-composite-pun
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en
+language: vi
 
-pipeline: null
+pipeline:
+#  - name: vi_tokenizer.VietnameseTokenizer         # Tokenizer tiếng Việt (cài đặt riêng)
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer                          # Tốt cho số, email, mã số, v.v.
+  - name: LexicalSyntacticFeaturizer               # Thêm đặc trưng từ: viết hoa, số, dấu câu...
+  - name: CountVectorsFeaturizer                   # Word n-gram (ngữ nghĩa cơ bản)
+  - name: CountVectorsFeaturizer                   # Character n-gram (bắt lỗi chính tả, viết tắt)
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier                           # Mô hình chính phân loại intent và entity
+    epochs: 100
+    constrain_similarities: true
+#  - name: CRFEntityExtractor                       # Tốt cho entity nếu annotate đầy đủ
+  - name: EntitySynonymMapper                      # Map từ đồng nghĩa ("bsi" → "bác sĩ")
+  - name: FallbackClassifier                       # Trả về fallback nếu không chắc
+    threshold: 0.5
+    ambiguity_threshold: 0.1
+
 # # No configuration for the NLU pipeline was provided. The following default pipeline was used to train your model.
 # # If you'd like to customize it, uncomment and adjust the pipeline.
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.

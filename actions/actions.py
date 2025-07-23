@@ -1,27 +1,31 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/custom-actions
+from typing import Any, Text, Dict, List
+
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.types import DomainDict
 
 
-# This is a simple example for a custom action which utters "Hello World!"
+class ActionProvideDoctorInfo(Action):
+    def name(self) -> str:
+        return "action_provide_doctor_info"
 
-# from typing import Any, Text, Dict, List
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.executor import CollectingDispatcher
-#
-#
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: DomainDict) -> list:
+        doctor_name = tracker.get_slot("doctor_name")
+
+        # Ví dụ: Tạo thông tin bác sĩ giả định
+        doctor_info_db = {
+            "bác sĩ an": "Bác sĩ An là chuyên gia nội khoa, làm việc tại bệnh viện A.",
+            "bác sĩ bình": "Bác sĩ Bình chuyên khoa nhi, hiện đang công tác tại bệnh viện B.",
+            "bác sĩ cường": "Bác sĩ Cường là chuyên gia về tim mạch, lịch làm việc từ thứ 2 đến thứ 6."
+        }
+
+        # Chuẩn hóa tên để dễ tra cứu (ví dụ: viết thường)
+        doctor_name_lower = doctor_name.lower() if doctor_name else ""
+
+        info = doctor_info_db.get(doctor_name_lower, "Xin lỗi, tôi không tìm thấy thông tin về bác sĩ đó.")
+
+        dispatcher.utter_message(text=info)
+
+        return []

@@ -1,56 +1,4 @@
 {
-  "greet": {
-    "precision": 0.9615384615384616,
-    "recall": 1.0,
-    "f1-score": 0.9803921568627451,
-    "support": 50,
-    "confused_with": {}
-  },
-  "ask_appointment_status": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 30,
-    "confused_with": {}
-  },
-  "ask_availability": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 50,
-    "confused_with": {}
-  },
-  "ask_hospital_info": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 51,
-    "confused_with": {}
-  },
-  "goodbye": {
-    "precision": 1.0,
-    "recall": 0.9019607843137255,
-    "f1-score": 0.9484536082474228,
-    "support": 51,
-    "confused_with": {
-      "thank": 3,
-      "greet": 2
-    }
-  },
-  "deny": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 30,
-    "confused_with": {}
-  },
-  "ask_specialty": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 50,
-    "confused_with": {}
-  },
   "cancel_appointment": {
     "precision": 1.0,
     "recall": 1.0,
@@ -58,32 +6,25 @@
     "support": 30,
     "confused_with": {}
   },
-  "ask_doctor_info": {
+  "book_appointment_by_doctor": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 50,
+    "support": 7,
     "confused_with": {}
   },
-  "reschedule_appointment": {
+  "goodbye": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 30,
+    "support": 47,
     "confused_with": {}
   },
   "thank": {
-    "precision": 0.9090909090909091,
-    "recall": 1.0,
-    "f1-score": 0.9523809523809523,
-    "support": 30,
-    "confused_with": {}
-  },
-  "fallback": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 112,
+    "support": 30,
     "confused_with": {}
   },
   "inform_symptoms": {
@@ -91,6 +32,20 @@
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 51,
+    "confused_with": {}
+  },
+  "book_appointment_by_specialty": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 47,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 50,
     "confused_with": {}
   },
   "provide_info": {
@@ -107,30 +62,79 @@
     "support": 30,
     "confused_with": {}
   },
-  "book_appointment": {
+  "ask_availability": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 50,
     "confused_with": {}
   },
-  "accuracy": 0.9930167597765364,
+  "fallback": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 15,
+    "confused_with": {}
+  },
+  "ask_appointment_status": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 30,
+    "confused_with": {}
+  },
+  "ask_doctor_info": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 50,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 30,
+    "confused_with": {}
+  },
+  "ask_hospital_info": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 51,
+    "confused_with": {}
+  },
+  "ask_specialty": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 50,
+    "confused_with": {}
+  },
+  "reschedule_appointment": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 30,
+    "confused_with": {}
+  },
+  "accuracy": 1.0,
   "macro avg": {
-    "precision": 0.9919143356643356,
-    "recall": 0.9938725490196079,
-    "f1-score": 0.992576669843195,
-    "support": 716
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 619
   },
   "weighted avg": {
-    "precision": 0.9935050982537016,
-    "recall": 0.9930167597765364,
-    "f1-score": 0.9929639251888049,
-    "support": 716
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 619
   },
   "micro avg": {
-    "precision": 0.9930167597765364,
-    "recall": 0.9930167597765364,
-    "f1-score": 0.9930167597765364,
-    "support": 716
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 619
   }
 }

@@ -1,0 +1,103 @@
+=======================
+📁 TỔNG HỢP CÁC LỆNH RASA (Kèm chú thích)
+=======================
+
+1. KHỞI TẠO DỰ ÁN
+-----------------
+rasa init
+    → Tạo một dự án Rasa mới với ví dụ mẫu và cấu trúc thư mục cơ bản.
+
+rasa init --no-prompt
+    → Tạo nhanh dự án mà không cần xác nhận thủ công.
+
+rasa create
+    → (Ít dùng) Dùng để tạo các component tùy chỉnh hoặc project mẫu.
+
+2. HUẤN LUYỆN MÔ HÌNH
+----------------------
+rasa train
+    → Huấn luyện toàn bộ mô hình: NLU (hiểu ngôn ngữ) + Core (quyết định hành động).
+
+rasa train nlu
+    → Chỉ huấn luyện phần NLU (phân loại intent và trích xuất entity).
+
+rasa train core
+    → Chỉ huấn luyện phần Core (hành vi, flow, chính sách hội thoại).
+
+rasa train --config <file>
+    → Sử dụng file cấu hình `config.yml` tùy chỉnh để huấn luyện.
+
+rasa train --domain <file>
+    → Chỉ định file domain nếu không dùng `domain.yml` mặc định.
+
+rasa train --force
+    → Bỏ qua cache, luôn huấn luyện lại từ đầu.
+
+3. TƯƠNG TÁC VỚI CHATBOT
+-------------------------
+rasa shell
+    → Mở giao diện dòng lệnh để trò chuyện thử với chatbot.
+
+rasa shell nlu
+    → Kiểm tra riêng phần NLU: intent + entity từ câu người dùng.
+
+rasa interactive
+    → Huấn luyện chatbot tương tác qua CLI, có thể sửa hành vi bot trong thời gian thực.
+
+4. KIỂM THỬ VÀ ĐÁNH GIÁ
+-------------------------
+rasa test
+    → Đánh giá mô hình hiện tại trên tập kiểm thử (stories + nlu).
+
+rasa test nlu
+    → Đánh giá riêng phần NLU (intent classification & entity extraction).
+
+rasa test core
+    → Đánh giá riêng phần Core (story flow prediction).
+
+rasa data validate
+    → Kiểm tra lỗi về domain, intent trùng, slot sai kiểu, stories bị lỗi logic...
+
+5. QUẢN LÝ DỮ LIỆU
+-------------------
+rasa data convert
+    → Chuyển đổi dữ liệu NLU giữa các định dạng (markdown ↔ YAML).
+
+rasa data split nlu
+    → Tách dữ liệu NLU thành tập huấn luyện và kiểm thử.
+
+rasa data validate
+    → (Lặp lại) Rất cần khi thêm mới intent, entity, domain hoặc sửa story.
+
+6. CHẠY SERVER VÀ TRIỂN KHAI
+------------------------------
+rasa run
+    → Khởi động Rasa server (REST API tại http://localhost:5005).
+
+rasa run actions
+    → Khởi chạy action server (custom action viết trong `actions.py`).
+
+rasa run --enable-api
+    → Bật chế độ REST API để client/web/app có thể gửi message và nhận phản hồi.
+
+rasa run --cors "*" --debug
+    → Cho phép truy cập từ mọi domain (CORS) và hiển thị log chi tiết.
+
+7. RASA X (nếu cài đặt)
+-------------------------
+rasa x
+    → Giao diện web hỗ trợ huấn luyện, ghi chú và quản lý hội thoại. Không còn trong Rasa OSS mặc định.
+
+8. CÁC LỆNH NÂNG CAO KHÁC
+---------------------------
+rasa export
+    → Xuất dữ liệu hội thoại người dùng đã lưu (tracker store) ra file.
+
+rasa visualize
+    → Vẽ sơ đồ cây flow hội thoại từ các story đã viết.
+
+rasa --help
+    → Hiển thị danh sách tất cả các lệnh Rasa có thể dùng.
+
+rasa <command> --help
+    → Hiển thị hướng dẫn chi tiết cho từng lệnh cụ thể.
